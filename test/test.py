@@ -1,4 +1,10 @@
 import os
+import sys
+
+# 引入该项目的目录
+# 引用项目的根目录
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_dir)
 
 # laod environment variables from .env file
 import dotenv
@@ -7,8 +13,8 @@ dotenv.load_dotenv()
 pdf_path = '../examples/attention_is_all_you_need.pdf'
 output_dir = '../examples/attention_is_all_you_need/'   
 
-pdf_path = '../examples/rh.pdf'
-output_dir = '../examples/rh/'
+pdf_path = './examples/rh.pdf'
+output_dir = './examples/rh/'
 
 # 清空output_dir
 # import shutil
@@ -46,7 +52,7 @@ def test_azure():
 
 def test_qwen_vl_max():
     from gptpdf import parse_pdf
-    api_key = 'sk-xxxx'
+    api_key = 'sk-91b849e8f8014380bf7eac465cc934f'
     base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     # Refer to: https://help.aliyun.com/zh/dashscope/developer-reference/compatibility-of-openai-with-dashscope
     model  = 'qwen-vl-max'
@@ -57,6 +63,6 @@ def test_qwen_vl_max():
 
 if __name__ == '__main__':
     # test_use_api_key()
-    test_use_env()
+    # test_use_env()
     # test_azure()
-    # test_qwen_vl_max()
+    test_qwen_vl_max()
