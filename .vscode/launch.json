@@ -8,6 +8,13 @@
             "name": "Python 调试程序: 当前文件",
             "type": "debugpy",
             "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python test",
+            "type": "debugpy",
+            "request": "launch",
             "program": "test/test.py",
             "console": "integratedTerminal"
         }
